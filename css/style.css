@@ -1,0 +1,625 @@
+/*
+* Created by : Chris Wheelahan
+* Adapted from a template by: Ahmed Eissa
+*/
+
+
+/* Table of Content
+==================================================
+	- Google fonts & font family -
+	- General -
+    - typography -
+	- Nav - 
+    - box intro section -
+    - Pages section - 
+    - Footer -
+    - Responsive media queries -
+*/
+
+
+/* Google fonts & font family
+==================================================*/
+
+@import url(https://fonts.googleapis.com/css?family=Prompt:400,500,600,700);
+@import url(https://fonts.googleapis.com/css?family=Cinzel:400,500,600,700);
+
+
+/* General
+==================================================*/
+
+html,
+body {
+    height: 100%;
+    font-family: 'Prompt', sans-serif;
+    line-height: 1.8;
+    color: #f2f2f2
+}
+
+.no-padding {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.no-padding [class^="col-"] {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.main-container {
+    padding: 100px 0;
+}
+
+.center {
+    text-align: center;
+}
+
+a {
+    -webkit-transition: all .3s;
+    transition: all .3s
+    color: #19375c;
+    font-family: 'Prompt'
+
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.h-30 {
+    height: 30px
+}
+
+.h-10 {
+    height: 10px
+}
+
+.color {
+    color: #ffbf00;
+    font-size: 11px;
+}
+  
+td, th {
+border: 1px solid #19375c;
+padding: 0.5rem;
+}
+
+/* typography
+==================================================*/
+
+h1 {
+    color: #19375c;
+    margin: 0px;
+    font-size: 40px;
+    text-transform: uppercase;
+	text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px rgba(180,180,180,0.8);
+	font-family: 'Cinzel'
+}
+
+h2 {
+	text-align: center;
+	color: #19375c;
+	font-family: 'Cinzel'
+}
+
+h3 {
+    color: #19375c;
+}
+
+h4 {
+	color: #a1a1a1;
+}
+
+h5 {
+    color: #ffbf00;
+}
+
+/* container
+==================================================*/
+.container-fluid {
+    background-image: url('../img/container2.jpg');
+    background-repeat: no-repeat;
+    background-color: #f2f2f2;
+    height: 633px;
+}
+
+/* nav
+==================================================*/
+.nav {
+	position: absolute;
+    right: 0;
+    display: table;
+    /*width: 35%;*/
+    text-align: right;
+    padding: 20px;
+    vertical-align: text-top;
+    
+}
+
+.nav-menu {
+	font-size: 18px;
+	margin-top: 60px;
+
+}
+
+.nav-row {
+	color: #19375c;
+    text-align: right;
+    border-top: 100px;
+    border-bottom: 100px;
+}
+
+.nav-item {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #19375c;
+    text-align: right;
+    border-top: 100px;
+    border-bottom: 100px;
+}
+
+.nav-item:hover {
+    /*-webkit-transition: background 0.5s linear;
+    -moz-transition: background 0.5s linear;
+    -ms-transition: background 0.5s linear;
+    -o-transition: background 0.5s linear;
+    transition: background 0.5s linear; Transitions and gradients aren't both supported in CSS3 yet */
+    background: rgba(128, 128, 128, 0.4);
+	background: -moz-linear-gradient(left, rgba(128,128,128,0.01) 0%, rgba(128,128,128,0.01) 60%, rgba(128,128,128,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left, rgba(128,128,128,0.01) 0%,rgba(128,128,128,0.01) 60%,rgba(128,128,128,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(left, rgba(128,128,128,0.01) 0%,rgba(128,128,128,0.01) 60%,rgba(128,128,128,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	text-decoration: none;
+}
+
+.name {
+	margin-top: 20px;
+	margin-bottom: 0px;
+}
+
+/* box-intro
+==================================================*/
+
+.box-intro {
+    text-align: center;
+    display: table;
+    /*height: 100vh;*/
+    width: 100%;
+
+}
+
+.box-intro .table-cell {
+    display: table-cell;
+    vertical-align: middle;
+
+}
+
+.box-intro em {
+    font-style: normal;
+    text-transform: uppercase
+
+}
+
+b i:last-child {
+    color: #ffbf00 !important;
+}
+
+/* mouse effect */
+
+.mouse {
+    position: absolute;
+    width: 22px;
+    height: 42px;
+    bottom: 40px;
+    left: 50%;
+    margin-left: -12px;
+    border-radius: 15px;
+    border: 2px solid #19375c;
+    -webkit-animation: intro 1s;
+    animation: intro 1s;
+}
+
+.scroll {
+    display: block;
+    width: 3px;
+    height: 3px;
+    margin: 6px auto;
+    border-radius: 4px;
+    background: #19375c;
+    -webkit-animation: finger 2s infinite;
+    animation: finger 2s infinite;
+}
+
+@-webkit-keyframes intro {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(40px);
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@keyframes intro {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(40px);
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+@-webkit-keyframes finger {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+}
+
+@keyframes finger {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+}
+
+/* cv
+==================================================*/
+.cv {
+	text-align: center;
+    display: table;
+    width: 100%;
+    background-color: #e1e1e1;
+}
+
+.cv_banner {
+	color: #19375c;
+	font-size: 40px;
+	font-family: 'Cinzel'
+}
+
+#portfolio .portfolio-item {
+  margin: 0 0 15px;
+  right: 0;
+}
+#portfolio .portfolio-item .portfolio-link {
+  display: block;
+  position: relative;
+  max-width: 400px;
+  margin: 0 auto;
+}
+#portfolio .portfolio-item .portfolio-link .portfolio-hover {
+  	background-image: url("../img/brushed-alum.png");
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all ease 0.5s;
+  -webkit-transition: all ease 0.5s;
+  -moz-transition: all ease 0.5s;
+}
+#portfolio .portfolio-item .portfolio-link .portfolio-hover:hover {
+  opacity: 1;
+}
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content {
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  font-size: 20px;
+  text-align: center;
+  top: 50%;
+  margin-top: -12px;
+  color: white;
+}
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content i {
+  margin-top: -12px;
+}
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h3,
+#portfolio .portfolio-item .portfolio-link .portfolio-hover .portfolio-hover-content h4 {
+  margin: 0;
+}
+#portfolio .portfolio-item .portfolio-caption {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: white;
+  text-align: center;
+  padding: 25px;
+}
+#portfolio .portfolio-item .portfolio-caption h4 {
+  font-family: "Prompt", sans-serif;
+  color: #19375c;
+  text-transform: none;
+  margin: 0;
+}
+#portfolio .portfolio-item .portfolio-caption p {
+  font-family: "Prompt", sans-serif;
+  color: #c1c1c1;
+  font-style: italic;
+  font-size: 16px;
+  margin: 0;
+}
+#portfolio * {
+  z-index: 2;
+}
+
+@media (min-width: 767px) {
+  #portfolio .portfolio-item {
+    margin: 0 0 30px;
+  }
+}
+
+.portfolio-modal .modal-dialog {
+  margin: 0;
+  height: 100%;
+  width: auto;
+}
+.portfolio-modal .modal-content {
+  border-radius: 0;
+  background-clip: border-box;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  border: none;
+  min-height: 100%;
+  padding: 10px 0;
+}
+.portfolio-modal .modal-content h2 {
+  margin-bottom: 15px;
+  font-size: 3em;
+}
+.portfolio-modal .modal-content p {
+  margin-bottom: 30px;
+}
+.portfolio-modal .modal-content p.item-intro {
+  margin: 20px 0 30px;
+  font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: italic;
+  font-size: 16px;
+}
+.portfolio-modal .modal-content ul.list-inline {
+  margin-bottom: 30px;
+  margin-top: 0;
+}
+.portfolio-modal .modal-content img {
+  margin-bottom: 30px;
+}
+.portfolio-modal .close-modal {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  background-color: transparent;
+  top: 25px;
+  right: 25px;
+  cursor: pointer;
+}
+.portfolio-modal .close-modal:hover {
+  opacity: 0.3;
+}
+.portfolio-modal .close-modal .lr {
+  height: 75px;
+  width: 1px;
+  margin-left: 35px;
+  background-color: #222222;
+  transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  /* IE 9 */
+  -webkit-transform: rotate(45deg);
+  /* Safari and Chrome */
+  z-index: 1051;
+}
+.portfolio-modal .close-modal .lr .rl {
+  height: 75px;
+  width: 1px;
+  background-color: #222222;
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  /* IE 9 */
+  -webkit-transform: rotate(90deg);
+  /* Safari and Chrome */
+  z-index: 1052;
+}
+.portfolio-modal .modal-backdrop {
+  opacity: 0;
+  display: none;
+}
+
+.btn-primary {
+  position: fixed;
+  color: white;
+  background-color: #19375c;
+  font-family: "Prompt", sans-serif;
+  text-transform: uppercase;
+  margin: 15px;
+  right: 0;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active,
+.open .dropdown-toggle.btn-primary {
+  color: #19375c;
+  background-color: #f2f2f2;
+}
+
+
+/* Education
+==================================================*/
+
+.row{
+padding-top: 20px;
+}
+
+.detail_headline {
+padding-left: 22%;
+}
+
+.school_headline {
+padding-left: 22%;
+padding-top: 20px;
+}
+
+.details {
+clear: both;
+color: #19375c;
+
+}
+
+.school-image {
+float: left;
+display: inline-block;
+max-width: 20%;
+margin-top: 20px;
+}
+
+.course_table {
+clear: both;
+color: #19375c;
+border: 1px solid #19375c;
+width: 100%;
+
+}
+
+/* Personal Experience
+==================================================*/
+.personal_exp {
+	text-align: center;
+    display: table;
+    height: 100vh;
+    width: 100%;
+    background-color: #f2f2f2;
+    color: #19375c;
+}
+
+.exp_img {
+	height: 200px;
+	border-color: black;
+	border: 1px;
+	float: left;
+	display: inline-block;
+	max-width: 20%;
+	margin-top: 20px;
+}
+
+.exp_headline {
+	padding-left: 22%;
+	padding-top: 20px;
+	text-align: left;
+}
+
+.affiliations {
+	clear: both;
+	padding-top: 30px;
+}
+
+.affl {
+	margin: auto;
+	margin-bottom: 30px;
+	width: 70%;
+}
+
+.table_img {
+	width: 100px;
+}
+
+
+/* This Webpage
+==================================================*/
+.this_page {
+	text-align: center;
+    display: table;
+    height: 100vh;
+    width: 100%;
+    background-color: #e1e1e1;
+    color: #19375c;
+}
+
+.thispage_banner {
+	color: #19375c;
+	font-size: 40px;
+	font-family: 'Cinzel'
+}
+
+.thispage_content {
+	text-align: left;
+}
+
+.farewell {
+	text-align: center;
+	margin-top: 30px;
+}
+
+/* footer
+==================================================*/
+
+footer {
+    padding: 30px 0;
+    text-align: center;
+    background: #f5f5f5
+}
+
+.copyright {
+    color: #ccc;
+    margin-bottom: 0;
+}
+
+footer img {
+    margin: 0 auto;
+}
+
+/* backto top
+==================================================*/
+
+.cd-top {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    position: fixed;
+    bottom: 20px;
+    line-height: 40px;
+    font-size: 20px;
+    right: 10px;
+    text-align: center;
+    color: #fff;
+    background: #19375c;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: opacity .3s 0s, visibility 0s .3s;
+    transition: opacity .3s 0s, visibility 0s .3s;
+}
+
+.cd-top.cd-is-visible,
+.cd-top.cd-fade-out,
+.no-touch .cd-top:hover {
+    -webkit-transition: opacity .3s 0s, visibility 0s 0s;
+    transition: opacity .3s 0s, visibility 0s 0s;
+}
+
+.cd-top.cd-is-visible {
+    /* the button becomes visible */
+    visibility: visible;
+    opacity: 1;
+}
+
+.cd-top.cd-fade-out {
+    opacity: .5;
+}
+
+.no-touch .cd-top:hover,
+.no-touch .cd-top:focus {
+    background-color: #19375c;
+    opacity: 1;
+    color: #fff;
+}
